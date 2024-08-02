@@ -4,15 +4,13 @@
     {
       "label": "Compile and run",
       "type": "shell",
-      "command": "cmd.exe",
+      "command": "cmd",
       "args": [
         "/c",
-        "copy \"${file}\" \"${workspaceFolder}\\jspwTest.cpp\" && g++ \"${workspaceFolder}\\jspwTest.cpp\" -o \"${workspaceFolder}\\jspwTest\" && \"${workspaceFolder}\\jspwTest\" < \"${workspaceFolder}\\input.txt\" > \"${workspaceFolder}\\output.txt\" && del \"${workspaceFolder}\\jspwTest.exe\" && del \"${workspaceFolder}\\jspwTest.cpp\""
+        "copy \"${file}\" \"${workspaceFolder}\\jspwTest.cpp\" && g++ jspwTest.cpp -o jspwTest && jspwTest < input.txt > output.txt && del jspwTest.exe && del jspwTest.cpp"
       ],
       "presentation": {
-        "reveal": "silent",
-        "panel": "dedicated",
-        "clear": true
+        "reveal": "never"
       },
       "group": {
         "kind": "build",
