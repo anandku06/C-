@@ -58,9 +58,9 @@ int main()
 
     inorderTraversal(root);
 
-    // preorderTraversal(root);
+    preorderTraversal(root);
     
-    // postorderTraversal(root);
+    postorderTraversal(root);
 
     return 0;
 }
