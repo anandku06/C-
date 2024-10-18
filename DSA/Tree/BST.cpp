@@ -15,15 +15,28 @@ TreeNode* insert(TreeNode* root, int val)
     if(root == nullptr)
     return new TreeNode(val);
 
-    else if(root->data < val)
+    if(root->data < val)
     insert(root->left, val);
 
     else
     insert(root->right, val);
+
+    return root;
+}
+
+void inOrder(TreeNode* root)
+{
+    if (root == nullptr) return;
+
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right);
 }
 
 int main()
 {
-    
+    TreeNode* root = new TreeNode(20);
+
+
     return 0;
 }
