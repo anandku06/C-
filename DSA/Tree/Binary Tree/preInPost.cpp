@@ -42,8 +42,28 @@ void preInPostTraversal(TreeNode* root)
             if(it.first->right != nullptr)
             st.push({it.first->right, 1});
         }
-        
         else post.push_back(it.first->data);
     }
+
+    cout << "PreOrder Traversal: ";
+    for (int i = 0; i < pre.size(); i++)
+    {
+        cout << pre[i] << " ";
+    }
+
+    cout << endl;
+    cout << "InOrder Traversal: ";
+    for (int i = 0; i < in.size(); i++)
+    {
+        cout << in[i] << " ";
+    }
+
+    cout << endl;
+    cout << "PostOrder Traversal: ";
+    for (int i = 0; i < post.size(); i++)
+    {
+        cout << post[i] << " ";
+    }
+    
     
 }
