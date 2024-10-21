@@ -62,3 +62,52 @@ TreeNode* findMinimum(TreeNode* root)
 
     return root;
 }
+
+TreeNode* deletion(TreeNode* root, int x)
+{
+    if(root == nullptr)
+    {
+        return nullptr;
+    }
+
+    if(x > root->data)
+    {
+        root->right =  deletion(root->right, x);
+    }
+
+    else if(x < root->data)
+    {
+        root->left = deletion(root->left, x);
+    }
+
+    else
+    {
+        if(root->left == nullptr && root->right == nullptr)
+        {
+            delete root;
+            return nullptr;
+        }
+
+        else if(root->left == nullptr || root->right == nullptr)
+        {
+            TreeNode* temp;
+            if(root->left == nullptr)
+            {
+                temp = root->right;
+            }
+            else temp = root->left;
+
+            delete root;
+            return temp;
+        }
+
+        else
+        {
+            TreeNode* temp = findMinimum(root->right);
+            root->data = temp->data;
+            root->right = deletion(root->right, temp->data);
+        }
+    }
+
+    return root;
+}
