@@ -80,14 +80,14 @@ TreeNode* deletion(TreeNode* root, int x)
         root->left = deletion(root->left, x);
     }
 
-    else
+    else //No child
     {
         if(root->left == nullptr && root->right == nullptr)
         {
             delete root;
             return nullptr;
         }
-
+        // One child
         else if(root->left == nullptr || root->right == nullptr)
         {
             TreeNode* temp;
@@ -101,7 +101,7 @@ TreeNode* deletion(TreeNode* root, int x)
             return temp;
         }
 
-        else
+        else //Two children
         {
             TreeNode* temp = findMinimum(root->right);
             root->data = temp->data;
