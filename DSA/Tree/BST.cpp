@@ -10,6 +10,21 @@ struct TreeNode
     TreeNode(int x) : data(x), left(nullptr), right(nullptr){}
 };
 
+TreeNode* searching(TreeNode* root, int x)
+{
+    if(root == nullptr || root->data == x)
+    {
+        return root;
+    }
+
+    else if(x > root->data)
+    {
+        return searching(root->right, x);
+    }
+
+    else return searching(root->left, x);
+}
+
 TreeNode* insert(TreeNode* root, int val)
 {
     if(root == nullptr)
@@ -33,10 +48,17 @@ void inOrder(TreeNode* root)
     inOrder(root->right);
 }
 
-int main()
+TreeNode* findMinimum(TreeNode* root)
 {
-    TreeNode* root = new TreeNode(20);
+    if(root == nullptr)
+    {
+        return nullptr;
+    }
 
+    else if(root->left != nullptr)
+    {
+        return findMinimum(root->left);
+    }
 
-    return 0;
+    return root;
 }
