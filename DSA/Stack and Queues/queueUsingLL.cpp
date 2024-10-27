@@ -30,4 +30,17 @@ class QueueUsingLL
             end = newNode;
             size++;
         }
+
+        int pop()
+        {
+            if(start == nullptr) cout << "Queue is empty" << endl;
+
+            int poppedElem = start->data;
+            Node* temp = start;
+            start = start->next;
+            delete temp;
+
+            size--;
+            return poppedElem;
+        }
 };
