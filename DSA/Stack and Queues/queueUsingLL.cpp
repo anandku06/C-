@@ -43,4 +43,14 @@ class QueueUsingLL
             size--;
             return poppedElem;
         }
+
+        int size()
+        {
+            return size;
+        }
+
+        int top()
+        {
+            return start->data;
+        }
 };
