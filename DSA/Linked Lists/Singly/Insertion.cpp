@@ -9,4 +9,9 @@ struct Node
     Node(int x) : data(x), next(nullptr){}
 };
 
-void insertAtTheHead(Node* root)
+Node* insertAtTheHead(Node* head, int val)
+{
+    Node* temp = new Node(val);
+
+    return temp;
+}
