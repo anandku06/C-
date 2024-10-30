@@ -24,4 +24,23 @@ class QueueUsingStack
             }
             
         }
+
+        int pop()
+        {
+            if(s1.size() == 0) return -1;
+            int poppedElem = s1.top();
+            s1.pop();
+
+            return poppedElem;
+        }
+
+        int top()
+        {
+            return s1.top();
+        }
+
+        int size()
+        {
+            return s1.size();
+        }
 };
