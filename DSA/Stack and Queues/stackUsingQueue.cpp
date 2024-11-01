@@ -16,4 +16,12 @@ class StackUsingQueue
             q.pop();
         }
     }
+
+    int pop()
+    {
+        int poppedElem = q.front();
+        q.pop();
+
+        return poppedElem;
+    }
 };
