@@ -24,4 +24,14 @@ class StackUsingQueue
 
         return poppedElem;
     }
+
+    int top()
+    {
+        return q.front();
+    }
+
+    int size()
+    {
+        return q.size();
+    }
 };
