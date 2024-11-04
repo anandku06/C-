@@ -7,6 +7,7 @@ struct Node
     Node *next;
 
     Node(int x) : data(x), next(nullptr) {}
+    Node(int x, Node* temp) : data(x), next(temp) {}
 };
 
 Node *insertAtTheHead(Node *head, int val)
@@ -16,22 +17,21 @@ Node *insertAtTheHead(Node *head, int val)
     return temp;
 }
 
-Node *insertAtTheEnd(Node **head, int val)
+Node *insertAtTheEnd(Node *head, int val)
 {
     Node *newNode = new Node(val);
 
-    if (*head == nullptr)
+    if (head == nullptr)
     {
-        *head = newNode;
-        return *head;
+        return new Node(val, head);
     }
 
-    Node *temp = *head;
+    Node *temp = head;
     while (temp->next != nullptr)
     {
         temp = temp->next;
     }
 
     temp->next = newNode;
-    return *head;
+    return head;
 }
