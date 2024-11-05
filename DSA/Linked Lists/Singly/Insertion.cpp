@@ -35,3 +35,27 @@ Node *insertAtTheEnd(Node *head, int val)
     temp->next = newNode;
     return head;
 }
+
+Node* insertAtK(Node* head, int val, int k)
+{
+    Node* newNode = new Node(val);
+    if(head == nullptr) return newNode;
+
+    if(k == 1)
+    {
+        newNode->next = head->next;
+        head->next = newNode;
+        return head;
+    }
+
+    Node* temp = head;
+    for (int i = 1; i < k-1 && temp != nullptr; i++)
+    {
+        temp = temp->next;
+    }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+    
+    return head;
+}
