@@ -49,6 +49,21 @@ TreeNode *deletionInBST(TreeNode *root, int key)
     return root;
 }
 
+TreeNode* helper(TreeNode* root)
+{
+    if(root->left == nullptr)
+    return root->right;
+
+    else if(root->right == nullptr)
+    return root->left;
+
+    TreeNode* rightChild = root->right;
+    TreeNode* lastChild = findLastChild(root->left);
+    lastChild->right = rightChild;
+
+    return root->left;
+}
+
 int main()
 {
 
