@@ -64,6 +64,14 @@ TreeNode* helper(TreeNode* root)
     return root->left;
 }
 
+TreeNode* findLastChild(TreeNode* root)
+{
+    if(root->right == nullptr)
+    return root;
+
+    return findLastChild(root->right);
+}
+
 int main()
 {
 
