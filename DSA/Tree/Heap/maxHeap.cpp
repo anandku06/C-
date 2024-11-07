@@ -39,9 +39,16 @@ void insert(int arr[], int newNum, int size)
     else
     {
         arr[size] = newNum;
+        size += 1;
+        for (int i = (size / 2) - 1; i >= 0; i--)
+        {
+            heapify(arr, size, i);
+        }
         
     }
 }
+
+
 
 int main()
 {
