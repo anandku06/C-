@@ -17,9 +17,9 @@ void heapify(int arr[], int size, int i)
     {
         int largest = i;
         int l = 2 * i + 1;
-        int r = 2 * i + 1;
+        int r = 2 * i + 2;
 
-        if (l < size && arr[i] > arr[largest])
+        if (l < size && arr[l] > arr[largest])
             largest = l;
 
         if (r < size && arr[r] > arr[largest])
