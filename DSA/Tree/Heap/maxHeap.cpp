@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void swap(int*, int*);
+void swap(int* a, int* b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 void heapify(int arr[], int size, int i)
 {
