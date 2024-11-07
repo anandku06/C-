@@ -63,16 +63,23 @@ void deletion(int array[], int num, int size)
     }
 }
 
+void heapSort(int arr[], int n)
+{
+    for(int i = n / 2 - 1; i >= 0; i--)
+    {
+        heapify(arr, n, i);
+    }
+
+    for(int i = n - 1; i >= 0; i--)
+    {
+        swap(&arr[0], &arr[i]);
+    }
+}
+
 void printArray(int arr[], int size)
 {
     for(int i = 0; i < size, i++)
     {
         cout << i << " ";
     }
-}
-
-int main()
-{
-
-    return 0;
 }
