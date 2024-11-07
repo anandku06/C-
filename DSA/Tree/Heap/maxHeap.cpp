@@ -28,7 +28,20 @@ void heapify(int arr[], int size, int i)
     }
 }
 
+void insert(int arr[], int newNum, int size)
+{
+    if(size == 0)
+    {
+        arr[0] = newNum;
+        size += 1;
+    }
 
+    else
+    {
+        arr[size] = newNum;
+        
+    }
+}
 
 int main()
 {
