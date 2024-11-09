@@ -63,3 +63,32 @@ Node* insertAtK(Node* head, int val, int k)
     
     return head;
 }
+
+Node* insertBeforeValue(Node* head, int x, int target)
+{
+    Node* newNode = new Node(x);
+
+    if(head == nullptr) 
+    return nullptr;
+
+    if(head->data == target)
+    {
+        newNode->next = head;
+        return newNode;
+    }
+
+    Node* temp = head;
+
+    while (temp->next != nullptr)
+    {
+        if(temp->next->data == target)
+        {
+            newNode->next = temp->next;
+            temp->next = newNode;
+            break;   
+        }
+        temp = temp->next;
+    }
+
+    return head;
+}
