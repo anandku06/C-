@@ -37,3 +37,37 @@ Node* deleteEnd(Node* head)
     
     return head;
 }
+
+Node* deleteAtK(Node* head, int k)
+{
+    if(head == nullptr) return nullptr;
+
+    if(k == 1)
+    {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+
+        return head;
+    }
+
+    int count = 0;
+    Node* temp = head;
+    Node* prev = nullptr;
+
+    while (temp != nullptr)
+    {
+        count++;
+
+        if(count == k)
+        {
+            prev->next = prev->next->next;
+            delete temp;
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+
+    return head;
+}
