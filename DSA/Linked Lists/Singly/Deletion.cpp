@@ -72,7 +72,33 @@ Node* deleteAtK(Node* head, int k)
     return head;
 }
 
-Node* deleteAnyNode(Node* head)
+Node* deleteAnyNode(Node* head, int target)
 {
+    if(head == nullptr) return nullptr;
+
+    if(head->value == target)
+    {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+
+        return head;
+    }
+
+    Node* temp = head;
+    Node* prev = nullptr;
+    while (temp != nullptr)
+    {
+        if(temp->value == target)
+        {
+            prev->next = prev->next->next;
+            delete temp;
+            break;
+        }
+
+        prev = temp;
+        temp = temp->next;
+    }
     
+    return head;
 }
