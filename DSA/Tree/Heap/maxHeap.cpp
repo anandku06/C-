@@ -33,7 +33,7 @@ void heapify(int arr[], int size, int i)
     }
 }
 
-void insertion(int arr[], int newNum, int size)
+void insertion(int arr[], int newNum, int &size)
 {
     if(size == 0)
     {
@@ -53,7 +53,7 @@ void insertion(int arr[], int newNum, int size)
     }
 }
 
-void deletion(int array[], int num, int size)
+void deletion(int array[], int num, int &size)
 {
     int i;
     for(i=0;i<size;i++){
@@ -86,6 +86,6 @@ void printArray(int arr[], int size)
 {
     for(int i = 0; i < size; i++)
     {
-        cout << i << " ";
+        cout << arr[i] << " ";
     }
 }
