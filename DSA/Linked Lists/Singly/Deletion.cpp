@@ -71,3 +71,8 @@ Node* deleteAtK(Node* head, int k)
 
     return head;
 }
+
+Node* deleteAnyNode(Node* head)
+{
+    
+}
