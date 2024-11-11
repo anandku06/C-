@@ -33,7 +33,7 @@ void heapify(int arr[], int size, int i)
     }
 }
 
-void insert(int arr[], int newNum, int size)
+void insertion(int arr[], int newNum, int size)
 {
     if(size == 0)
     {
