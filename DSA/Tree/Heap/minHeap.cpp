@@ -19,3 +19,8 @@ void heapify(int arr[], int size, int i)
         heapify(arr, size, smallest);
     }
 }
+
+void insertion(int arr[], int size, int value)
+{
+    
+}
