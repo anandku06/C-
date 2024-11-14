@@ -3,6 +3,8 @@
 #define INF 999
 using namespace std;
 
+void printMatrix(int matrix[nV][nV]);
+
 void floydWarshall(int graph[nV][nV])
 {
     int matrix[nV][nV], i, j, k;
@@ -27,7 +29,7 @@ void floydWarshall(int graph[nV][nV])
         }
     }
 
-    printMatrix(matrix[nV][nV]);
+    printMatrix(matrix);
 }
 
 int main()
