@@ -32,6 +32,18 @@ void floydWarshall(int graph[nV][nV])
     printMatrix(matrix);
 }
 
+void printMatrix(int matrix[nV][nV])
+{
+    for (int i = 0; i < nV; i++)
+    {
+        for (int j = 0; j < nV; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
 
