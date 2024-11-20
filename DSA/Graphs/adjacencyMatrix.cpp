@@ -1,3 +1,7 @@
+/* Problem here is the Space Complexity which is O(n^2)
+ as 2D array is used and much space is wasted */
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
