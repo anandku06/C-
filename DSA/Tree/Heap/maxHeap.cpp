@@ -56,14 +56,14 @@ void insertion(int arr[], int newNum, int &size)
 void deletion(int array[], int num, int &size)
 {
     int i;
-    for(i=0;i<size;i++){
-        if(num==array[i]){
+    for(i = 0; i < size; i++){
+        if(num == array[i]){
             break;
         }
     }
     swap(&array[i],&array[size-1]);
     size=size-1;
-    for(int i=size/2-1;i>=0;i--){
+    for(int i = size / 2 - 1; i >= 0; i--){
         heapify(array,size,i);
     }
 }
